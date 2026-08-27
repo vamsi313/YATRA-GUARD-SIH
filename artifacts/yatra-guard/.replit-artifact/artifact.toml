@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/"
+title = "YatraGuard"
+description = "A mobile pilgrimage guide and crowd-safety companion for Indian destinations, combining destination discovery, crowd intelligence, proactive safety guidance, trip planning, emergency information, and a future-ready AI assistant with realistic prototype data."
+version = "1.0.0"
+id = "artifacts/yatra-guard"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/" ]
+localPort = 24648
+
+[services.development]
+run = "pnpm --filter @workspace/yatra-guard run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/yatra-guard", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/yatra-guard", "run", "serve" ]
+
+[services.env]
+PORT = "24648"
+BASE_PATH = "/"

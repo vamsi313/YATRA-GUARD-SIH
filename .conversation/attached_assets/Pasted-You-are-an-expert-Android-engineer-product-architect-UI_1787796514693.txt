@@ -1,0 +1,1471 @@
+You are an expert Android engineer, product architect, UI/UX designer, data engineer, and AI-product architect.
+
+Build the FIRST ITERATION / MVP of a mobile application called:
+
+YATRA GUARD
+
+Tagline:
+
+"Your Pilgrimage Guide. Your Crowd-Safety Companion."
+
+============================================================
+1. PRODUCT VISION
+============================================================
+
+YatraGuard is a centralized mobile platform for major pilgrimage and
+religious-tourism destinations in India.
+
+The platform serves TWO major purposes:
+
+1. PILGRIM / TOURIST ASSISTANCE
+2. CROWD MANAGEMENT AND STAMPEDE PREVENTION
+
+The application should combine:
+
+- pilgrimage information
+- tourism information
+- transportation
+- accommodation
+- crowd conditions
+- waiting times
+- safety information
+- emergency services
+- navigation
+- alerts
+- recommendations
+- itinerary planning
+- AI-powered guidance
+
+into ONE centralized platform.
+
+The central innovation is:
+
+Instead of pilgrims independently searching Google, maps, hotels,
+transportation, temple information, crowd conditions and safety
+information across multiple applications, YatraGuard combines them into
+a single platform.
+
+The system should eventually help prevent dangerous crowd accumulation
+by informing pilgrims BEFORE they enter an overcrowded area and
+redirecting them toward safer alternatives.
+
+IMPORTANT:
+
+This is the FIRST MVP.
+
+Use realistic MOCK / SAMPLE DATA.
+
+DO NOT integrate real government systems, CCTV, IoT sensors,
+real-time temple APIs, payment systems, or real crowd tracking yet.
+
+However, design the architecture so those systems can be integrated later.
+
+============================================================
+2. CORE PROBLEM
+============================================================
+
+Major pilgrimage destinations can experience:
+
+- overcrowding
+- long queues
+- congestion
+- sudden crowd accumulation
+- transportation bottlenecks
+- parking congestion
+- poor distribution of visitors
+- lack of centralized information
+- pilgrims entering already crowded areas
+- lack of awareness about alternative nearby locations
+- emergency response difficulties
+
+The application should eventually solve this by providing:
+
+"REAL-TIME SITUATIONAL AWARENESS + SMART GUIDANCE."
+
+The core principle is:
+
+DO NOT JUST TELL THE USER WHERE TO GO.
+
+TELL THEM:
+
+- where they can safely go
+- where they should avoid
+- why they should avoid it
+- when it may be safer
+- what alternative location they can visit
+- how to reach that alternative
+
+============================================================
+3. IMPORTANT PRODUCT POSITIONING
+============================================================
+
+YatraGuard is NOT simply:
+
+- a temple information app
+- a tourism app
+- a hotel booking app
+- a map app
+- a crowd monitoring app
+
+It is a centralized pilgrimage ecosystem.
+
+Think of it as:
+
+Google Maps
++
+Trip Planner
++
+Tourist Guide
++
+Pilgrimage Guide
++
+Crowd Monitoring
++
+Safety Assistant
++
+AI Travel Companion
+
+with crowd/stampede prevention as the CORE DIFFERENTIATOR.
+
+============================================================
+4. TARGET USERS
+============================================================
+
+Create the product with three future user types in mind:
+
+A. PILGRIMS / TOURISTS
+
+They use the mobile application to:
+
+- discover places
+- plan their trip
+- understand crowd conditions
+- find accommodation
+- find transport
+- find food
+- find parking
+- receive safety alerts
+- receive AI recommendations
+- create itineraries
+
+B. AUTHORITY / ADMIN
+
+Authorities eventually use the platform to:
+
+- monitor crowd levels
+- monitor locations
+- identify dangerous congestion
+- issue alerts
+- update crowd conditions
+- identify hotspots
+- manage emergency situations
+
+C. FUTURE DATA SOURCES
+
+Eventually the system may receive information from:
+
+- CCTV/computer vision
+- IoT sensors
+- transportation systems
+- official temple systems
+- accommodation systems
+- GPS/location aggregation
+- weather APIs
+- government data
+- manual authority updates
+
+For MVP, simulate these sources with mock data.
+
+============================================================
+5. DESTINATIONS
+============================================================
+
+The application MUST contain at least FOUR major pilgrimage destinations.
+
+Use:
+
+1. TIRUMALA / TIRUPATI
+2. PRAYAGRAJ KUMBH MELA
+3. VARANASI
+4. RAMESWARAM
+
+Each destination is a complete tourism/pilgrimage ecosystem.
+
+------------------------------------------------------------
+TIRUMALA / TIRUPATI
+------------------------------------------------------------
+
+Include:
+
+- Sri Venkateswara Temple
+- Tirumala
+- Alipiri
+- Srivari Mettu
+- Tiruchanur Padmavathi Temple
+- Kapila Theertham
+- Sri Govindaraja Swamy Temple
+- Akasa Ganga
+- Silathoranam
+
+Additional categories:
+
+Temples
+Tourist Attractions
+Nature
+Food
+Accommodation
+Transport
+Shopping
+Emergency
+Parking
+
+------------------------------------------------------------
+PRAYAGRAJ KUMBH MELA
+------------------------------------------------------------
+
+Include:
+
+- Triveni Sangam
+- Kumbh Mela Main Area
+- Bade Hanuman Temple
+- Alopi Devi Temple
+- Mankameshwar Temple
+- Akshayavat
+- Allahabad Fort Area
+- Anand Bhavan
+
+------------------------------------------------------------
+VARANASI
+------------------------------------------------------------
+
+Include:
+
+- Kashi Vishwanath Temple
+- Dashashwamedh Ghat
+- Assi Ghat
+- Manikarnika Ghat
+- Kedar Ghat
+- Sankat Mochan Temple
+- Kal Bhairav Temple
+- Sarnath
+
+------------------------------------------------------------
+RAMESWARAM
+------------------------------------------------------------
+
+Include:
+
+- Ramanathaswamy Temple
+- Agni Theertham
+- Pamban Bridge
+- Dhanushkodi
+- Kothandaramaswamy Temple
+- Gandhamadhana Parvatham
+- Abdul Kalam Memorial
+
+Every location should contain structured mock information.
+
+============================================================
+6. HOME SCREEN
+============================================================
+
+Create a highly polished home screen.
+
+Header:
+
+YatraGuard
+
+"Plan your pilgrimage. Travel smarter. Stay safer."
+
+Search:
+
+"Search temples, places, hotels, food, transport..."
+
+Then:
+
+CURRENT DESTINATIONS
+
+Show:
+
+Tirumala
+Prayagraj
+Varanasi
+Rameswaram
+
+Each card shows:
+
+- overall crowd
+- safety status
+- weather
+- number of recommended places
+- destination image
+
+Example:
+
+Tirumala
+
+Crowd:
+🔴 VERY HIGH
+
+Safety:
+🟠 CAUTION
+
+Weather:
+28°C
+
+------------------------------------------------------------
+
+Then:
+
+"WHAT DO YOU WANT TO DO?"
+
+Cards:
+
+🛕 Temples
+📸 Tourist Places
+🏨 Stay
+🍴 Food
+🚌 Transport
+🅿️ Parking
+🏥 Emergency
+🛍️ Shopping
+🗺️ Explore Map
+📅 Plan Trip
+
+------------------------------------------------------------
+
+Then:
+
+"SMART SAFETY ALERT"
+
+Example:
+
+⚠️ HIGH CROWD
+
+Sri Venkateswara Temple is currently
+at critical crowd levels.
+
+Consider visiting Kapila Theertham
+while waiting conditions improve.
+
+[View Alternatives]
+
+------------------------------------------------------------
+
+Then:
+
+"RECOMMENDED FOR YOU"
+
+Example:
+
+🟢 Low crowd
+Kapila Theertham
+
+🟢 Moderate crowd
+Tiruchanur Temple
+
+============================================================
+7. DESTINATION DASHBOARD
+============================================================
+
+When the user selects a destination:
+
+Example:
+
+TIRUMALA
+
+Show:
+
+Weather
+28°C
+
+Overall Crowd
+82%
+
+Safety Status
+HIGH ALERT
+
+Average Waiting Time
+4h 05m
+
+Then provide quick actions:
+
+Crowd
+Places
+Map
+Transport
+Stay
+Food
+Emergency
+Itinerary
+
+============================================================
+8. CROWD INTELLIGENCE
+============================================================
+
+Crowd is the CORE feature.
+
+Each location should have:
+
+- capacity
+- current occupancy
+- occupancy percentage
+- crowd level
+- estimated people
+- waiting time
+- trend
+- risk level
+
+IMPORTANT:
+
+Allow occupancy to exceed 100%.
+
+Example:
+
+Capacity:
+10,000
+
+Current estimated people:
+12,000
+
+Occupancy:
+120%
+
+Status:
+
+🔴 CRITICAL OVERCAPACITY
+
+This is important because the future system should identify dangerous
+overcrowding.
+
+Levels:
+
+0-30%:
+LOW
+
+31-60%:
+MODERATE
+
+61-80%:
+HIGH
+
+81-100%:
+VERY HIGH
+
+101-120%:
+CRITICAL
+
+120%+:
+DANGEROUS
+
+Do not rely only on colors.
+Always display text labels.
+
+============================================================
+9. STAMPEDE / SAFETY RISK
+============================================================
+
+Create a separate "Safety Status".
+
+Safety risk should consider mock factors such as:
+
+- occupancy
+- rate of crowd increase
+- waiting time
+- congestion
+- narrow pathways
+- transportation bottlenecks
+- historical hotspot indicator
+
+For MVP, calculate this using simple rules.
+
+Example:
+
+Occupancy = 120%
+Crowd increase = +18% in 30 minutes
+Pathway = narrow
+
+Result:
+
+CRITICAL CROWD RISK
+
+Display:
+
+"AVOID ENTERING THIS AREA RIGHT NOW."
+
+This is prototype logic only.
+
+============================================================
+10. SMART ALTERNATIVE RECOMMENDATION
+============================================================
+
+This is one of the MOST IMPORTANT features.
+
+If an area becomes overcrowded:
+
+DO NOT simply display:
+
+"Area crowded."
+
+Instead:
+
+"Area currently overcrowded."
+
+Then recommend alternatives.
+
+Example:
+
+CURRENT LOCATION:
+
+Sri Venkateswara Temple
+
+Occupancy:
+120%
+
+Risk:
+CRITICAL
+
+Recommendation:
+
+"Do not enter the queue area right now."
+
+Alternative:
+
+Kapila Theertham
+Occupancy: 34%
+Risk: LOW
+
+Alternative:
+
+Tiruchanur Temple
+Occupancy: 41%
+Risk: MODERATE
+
+Suggested plan:
+
+"Visit Kapila Theertham now and return to the main temple later."
+
+Add:
+
+[Go to Alternative]
+
+============================================================
+11. GEMINI AI INTEGRATION READY
+============================================================
+
+The application will eventually integrate Gemini AI.
+
+DO NOT require a real Gemini API key for this MVP.
+
+Instead, build a clean AI service abstraction.
+
+Example conceptual interface:
+
+AIRecommendationService
+
+The mock implementation should generate rule-based recommendations.
+
+Later this can be replaced with Gemini.
+
+The AI assistant should eventually be capable of:
+
+- answering pilgrim questions
+- suggesting destinations
+- creating itineraries
+- identifying crowded locations
+- recommending alternatives
+- suggesting safer visiting times
+- explaining alerts
+- helping with transportation
+- recommending nearby food
+- recommending accommodation
+- estimating trip plans
+- summarizing destination conditions
+- warning users about dangerous congestion
+
+Example future interaction:
+
+USER:
+
+"I am at Tirumala. Where should I go now?"
+
+AI:
+
+"Sri Venkateswara Temple is currently at 120% occupancy and
+experiencing critical congestion.
+
+I recommend avoiding the main queue area for now.
+
+Instead, consider Kapila Theertham, which currently has 34%
+occupancy and low crowd risk.
+
+You can return to the main temple after approximately 5 PM
+when the predicted crowd is lower."
+
+The UI should already have a place for this future Gemini assistant.
+
+============================================================
+12. AI ASSISTANT SCREEN
+============================================================
+
+Create:
+
+"Yatra AI"
+
+Subtitle:
+
+"Your personal pilgrimage guide"
+
+Example suggested questions:
+
+"Where should I go now?"
+
+"What places are less crowded?"
+
+"Plan my day."
+
+"Where can I stay?"
+
+"How do I reach the temple?"
+
+"Is this area safe to visit now?"
+
+"Find nearby food."
+
+"What's the best time to visit?"
+
+The MVP can return predefined/mock responses.
+
+============================================================
+13. CROWD PREDICTION
+============================================================
+
+Create a prototype "Crowd Forecast" section.
+
+Show:
+
+NOW
+82%
+
++1 HOUR
+91%
+
++2 HOURS
+108%
+
++3 HOURS
+121%
+
++4 HOURS
+114%
+
+Then:
+
+"High congestion expected in approximately 2 hours."
+
+For MVP, generate these values from mock data.
+
+Architect the feature so Gemini/ML can later replace the mock prediction.
+
+============================================================
+14. TOURIST GUIDE
+============================================================
+
+Every destination should function as a tourist guide.
+
+Categories:
+
+🛕 Religious Places
+📸 Attractions
+🌳 Nature
+🏛️ Heritage
+🛍️ Shopping
+🍴 Food
+🏨 Stay
+🎭 Culture
+
+Each place should contain:
+
+- description
+- photos/placeholders
+- opening hours
+- approximate visit duration
+- crowd level
+- recommended time
+- distance
+- nearby attractions
+- nearby food
+- nearby transport
+- safety information
+
+============================================================
+15. TRIP PLANNER
+============================================================
+
+Create a trip planning feature.
+
+User selects:
+
+Destination
+Number of days
+Interests
+
+Examples:
+
+Temple
+Culture
+Food
+Nature
+Family
+Photography
+
+Then create a mock itinerary.
+
+Example:
+
+DAY 1
+
+5:30 AM
+Sri Venkateswara Temple
+
+8:30 AM
+Breakfast
+
+10:00 AM
+Kapila Theertham
+
+1:00 PM
+Lunch
+
+3:00 PM
+Tiruchanur
+
+6:00 PM
+Return to Tirumala
+
+The itinerary should take crowd conditions into consideration.
+
+If a location is critically crowded:
+
+Automatically recommend an alternative.
+
+============================================================
+16. TRANSPORTATION
+============================================================
+
+Create:
+
+Bus
+Taxi
+Train
+Auto
+Parking
+Walking
+
+Show mock information:
+
+Next bus
+Travel time
+Frequency
+Crowd
+Availability
+
+Parking:
+
+Capacity
+Occupied
+Available percentage
+
+Example:
+
+Alipiri Parking
+
+Capacity:
+2,000
+
+Occupied:
+1,850
+
+Availability:
+7.5%
+
+Status:
+CRITICAL
+
+Recommendation:
+
+"Consider alternative parking."
+
+============================================================
+17. ACCOMMODATION
+============================================================
+
+Include:
+
+Temple accommodation
+Hotels
+Guest houses
+Budget stays
+Premium stays
+
+Information:
+
+Name
+Distance
+Price range
+Rating
+Availability
+Facilities
+
+Do not implement real booking.
+
+============================================================
+18. FOOD
+============================================================
+
+Create a food discovery section.
+
+Show:
+
+Restaurants
+Local food
+Vegetarian food
+Budget food
+Family-friendly food
+
+Each can show:
+
+Distance
+Price range
+Rating
+Crowd level
+Opening status
+
+============================================================
+19. EMERGENCY & SAFETY
+============================================================
+
+Create a prominent Emergency section.
+
+Show:
+
+🏥 Hospitals
+🚑 Ambulance
+👮 Police
+🚒 Fire
+🆘 Help Centers
+🚻 Toilets
+💧 Drinking Water
+
+Create:
+
+"Emergency Nearby"
+
+Use mock locations.
+
+Also include:
+
+"Lost & Found"
+
+"Medical Assistance"
+
+"Women/Child Help"
+
+For MVP, these are informational/mock features.
+
+============================================================
+20. WEATHER
+============================================================
+
+Show mock weather information.
+
+Example:
+
+28°C
+Partly Cloudy
+
+Rain:
+20%
+
+Humidity:
+70%
+
+Use weather information as part of future recommendation logic.
+
+Example:
+
+"Rain expected in the afternoon. Consider visiting outdoor attractions
+in the morning."
+
+============================================================
+21. MAP
+============================================================
+
+Create a map-like interface.
+
+For MVP it can be a custom mock map.
+
+Show:
+
+Temples
+Tourist places
+Hotels
+Food
+Transport
+Parking
+Hospitals
+Crowd hotspots
+
+Markers should support:
+
+LOW
+MODERATE
+HIGH
+CRITICAL
+
+Users should be able to tap markers.
+
+============================================================
+22. ALERT SYSTEM
+============================================================
+
+Create alerts.
+
+Types:
+
+INFO
+WARNING
+HIGH
+CRITICAL
+
+Examples:
+
+"Heavy crowd near main temple."
+
+"Parking area almost full."
+
+"Bus services increased."
+
+"Alternative route recommended."
+
+"Critical crowd density detected."
+
+"Rain expected in this area."
+
+Alerts should appear:
+
+- Home
+- Destination dashboard
+- Alerts screen
+- relevant place details
+
+============================================================
+23. PERSONALIZED RECOMMENDATIONS
+============================================================
+
+Allow users to select preferences:
+
+Family
+Senior citizens
+Children
+Photography
+Religious
+Nature
+Food
+Budget
+Accessibility
+
+Recommendations should use these preferences.
+
+Example:
+
+If user selects:
+
+Family + Senior Citizens
+
+Recommend:
+
+- less crowded locations
+- shorter walking distances
+- medical facilities nearby
+- accessible routes
+- less waiting time
+
+============================================================
+24. ACCESSIBILITY
+============================================================
+
+Each place should optionally contain:
+
+- wheelchair accessibility
+- senior-friendly
+- child-friendly
+- walking distance
+- restroom availability
+- seating availability
+
+This is especially important for pilgrimage destinations.
+
+============================================================
+25. FAVORITES
+============================================================
+
+Allow users to save:
+
+- destinations
+- places
+- hotels
+- restaurants
+
+============================================================
+26. SEARCH
+============================================================
+
+Global search must search across:
+
+Temples
+Tourist places
+Hotels
+Food
+Transport
+Parking
+Hospitals
+Destinations
+
+============================================================
+27. EXPLORE SCREEN
+============================================================
+
+Create an Explore screen with categories.
+
+Top:
+
+Search
+
+Then:
+
+Popular
+Nearby
+Low Crowd
+Recommended
+Temples
+Attractions
+Food
+Hotels
+Emergency
+
+Allow sorting by:
+
+Distance
+Crowd
+Rating
+Popularity
+
+============================================================
+28. PERSONAL TRIP DASHBOARD
+============================================================
+
+Create:
+
+"My Yatra"
+
+Show:
+
+Current destination
+Saved places
+Today's itinerary
+Alerts
+Recommendations
+
+Example:
+
+YOUR DAY
+
+Current location:
+Tirumala
+
+Current crowd:
+HIGH
+
+Next recommendation:
+Kapila Theertham
+
+Reason:
+Lower crowd
+
+============================================================
+29. AUTHORITY DASHBOARD
+============================================================
+
+Create a prototype authority dashboard.
+
+Show:
+
+Total monitored locations
+Low
+Moderate
+High
+Critical
+
+Example:
+
+32 monitored locations
+
+LOW:
+10
+
+MODERATE:
+12
+
+HIGH:
+7
+
+CRITICAL:
+3
+
+Then:
+
+Top Crowd Hotspots
+
+1. Main Temple Queue
+120%
+CRITICAL
+
+2. Bus Stand
+108%
+CRITICAL
+
+3. Main Road
+94%
+VERY HIGH
+
+============================================================
+30. AUTHORITY ACTIONS
+============================================================
+
+Allow mock authority users to:
+
+- update crowd percentage
+- update waiting time
+- update status
+- create alert
+- mark location as restricted
+- mark location as overcrowded
+
+Example:
+
+Location:
+Main Temple Queue
+
+Occupancy:
+120%
+
+Status:
+CRITICAL
+
+[Update]
+
+The pilgrim-facing application should immediately reflect the updated
+mock information.
+
+============================================================
+31. DATA ARCHITECTURE
+============================================================
+
+Create centralized mock data.
+
+Models should include:
+
+Destination
+Place
+CrowdData
+CrowdForecast
+SafetyStatus
+Transport
+Accommodation
+Restaurant
+Parking
+Hospital
+EmergencyPoint
+Alert
+Weather
+Itinerary
+Recommendation
+UserPreference
+Favorite
+
+Do NOT scatter data inside composables.
+
+Use:
+
+MockDataSource
+Repository
+ViewModel
+
+============================================================
+32. RECOMMENDATION ENGINE
+============================================================
+
+Create a simple rule-based engine for MVP.
+
+Rules:
+
+IF occupancy > 100%
+THEN recommend avoiding the location.
+
+IF occupancy > 110%
+THEN mark CRITICAL.
+
+IF occupancy > 120%
+THEN mark DANGEROUS.
+
+IF crowd increasing rapidly
+THEN issue warning.
+
+IF alternative location has significantly lower occupancy
+THEN recommend alternative.
+
+IF weather is bad
+THEN prioritize indoor locations.
+
+IF parking availability < 10%
+THEN recommend alternative parking.
+
+IF waiting time > 180 minutes
+THEN recommend alternative attraction.
+
+This will later be replaced/enhanced with Gemini/ML.
+
+============================================================
+33. GEMINI-READY ARCHITECTURE
+============================================================
+
+Do not hardcode Gemini API calls into UI.
+
+Create:
+
+AIRecommendationService
+
+MockAIRecommendationService
+
+Future:
+
+GeminiAIRecommendationService
+
+The future Gemini implementation should receive structured data such as:
+
+destination
+current crowd
+capacity
+waiting time
+forecast
+weather
+transport
+user preferences
+nearby alternatives
+
+Then Gemini can generate natural-language guidance.
+
+============================================================
+34. USER EXPERIENCE PRINCIPLE
+============================================================
+
+The application should proactively guide the user.
+
+Do not force users to manually search for every problem.
+
+For example, when opening the app:
+
+"⚠️ The main temple area is currently extremely crowded."
+
+"Here are 3 safer alternatives nearby."
+
+This should be one of the most important experiences in the application.
+
+============================================================
+35. SAMPLE SCENARIO
+============================================================
+
+Demonstrate this scenario:
+
+User selects Tirumala.
+
+App shows:
+
+MAIN TEMPLE
+
+Occupancy:
+120%
+
+Waiting:
+5 hours
+
+Risk:
+CRITICAL
+
+Then:
+
+"⚠️ We recommend avoiding this area right now."
+
+Alternative suggestions:
+
+Kapila Theertham
+34%
+
+Tiruchanur
+41%
+
+Silathoranam
+28%
+
+Then:
+
+"Recommended plan:
+
+Visit Silathoranam → Lunch → Tiruchanur → Return after 5 PM."
+
+This demonstrates the core concept of the product.
+
+============================================================
+36. BOTTOM NAVIGATION
+============================================================
+
+Use:
+
+🏠 Home
+🗺️ Explore
+📊 Crowd
+🤖 Yatra AI
+👤 Profile
+
+Emergency should always be accessible prominently.
+
+============================================================
+37. UI DESIGN
+============================================================
+
+The UI must feel like a real modern travel/public-safety application.
+
+Design:
+
+- Material 3
+- modern cards
+- clean typography
+- large touch targets
+- intuitive icons
+- clear hierarchy
+- rounded cards
+- subtle animations
+- polished spacing
+- professional color system
+
+Crowd status must be immediately understandable.
+
+Use:
+
+🟢 LOW
+🟡 MODERATE
+🟠 HIGH
+🔴 VERY HIGH
+🟣 CRITICAL
+
+Always display text as well as color.
+
+============================================================
+38. TRUST & TRANSPARENCY
+============================================================
+
+Since this is mock data, clearly show:
+
+"Prototype / Sample Data"
+
+Do not present mock crowd values as official real-time information.
+
+When Gemini is eventually integrated, clearly distinguish:
+
+- official information
+- system-generated estimates
+- AI recommendations
+
+============================================================
+39. PRIVACY
+============================================================
+
+Do not implement invasive location tracking in this MVP.
+
+If location functionality is added later, design it with privacy in mind.
+
+============================================================
+40. ARCHITECTURE
+============================================================
+
+Use:
+
+Kotlin
+Jetpack Compose
+Material 3
+MVVM
+Repository pattern
+StateFlow
+Navigation Compose
+
+Structure:
+
+com.yatraguard
+
+data/
+    model/
+    datasource/
+    repository/
+
+domain/
+    recommendation/
+
+ui/
+    screens/
+    components/
+    navigation/
+    theme/
+
+viewmodel/
+
+utils/
+
+============================================================
+41. FUTURE SYSTEM ARCHITECTURE
+============================================================
+
+The final system may eventually become:
+
+                YATRA GUARD
+                     |
+        +------------+------------+
+        |                         |
+   PILGRIM APP              AUTHORITY APP
+        |                         |
+        +------------+------------+
+                     |
+                 BACKEND
+                     |
+        +------------+------------+
+        |            |            |
+      Crowd      Transport      Places
+      Service      Service       Service
+        |
+   Data Pipeline
+        |
+ +------+------+------+------+ 
+ |      |      |      |      |
+CCTV   IoT   APIs   Weather  Maps
+        |
+        v
+ AI / ML Prediction
+        |
+        v
+ Crowd Forecast
+        |
+        v
+ Smart Recommendations
+        |
+        v
+ Pilgrim App
