@@ -7,14 +7,12 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "npmClient": "npm",
       "env": {
         "EXPO_PUBLIC_DOMAIN": "yatraguard-api.onrender.com"
       }
     },
     "preview": {
       "distribution": "internal",
-      "npmClient": "npm",
       "android": {
         "buildType": "apk"
       },
@@ -23,7 +21,6 @@
       }
     },
     "production": {
-      "npmClient": "npm",
       "android": {
         "buildType": "apk"
       },
