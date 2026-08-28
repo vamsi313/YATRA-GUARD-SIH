@@ -7,15 +7,8 @@ function getApiBaseUrl() {
   if (process.env.EXPO_PUBLIC_DOMAIN) {
     return `https://${process.env.EXPO_PUBLIC_DOMAIN}`;
   }
-  // If running in Expo Go or React Native on mobile/LAN
-  const hostUri = Constants.expoConfig?.hostUri || Constants.manifest2?.extra?.expoGo?.developer?.tool;
-  if (hostUri) {
-    const ip = hostUri.split(':')[0];
-    if (ip && ip !== 'localhost' && ip !== '127.0.0.1') {
-      return `http://${ip}:5000`;
-    }
-  }
-  return 'http://192.168.0.202:5000';
+  // Default to live Render cloud backend
+  return 'https://yatraguard-api.onrender.com';
 }
 
 export type Preference =
