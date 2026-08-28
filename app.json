@@ -18,6 +18,7 @@
     },
     "android": {
       "package": "com.yatraguard.app",
+      "kotlinVersion": "2.1.21",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
