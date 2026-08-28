@@ -3,5 +3,3 @@ node_modules
 dist
 tmp
 .git
-pnpm-lock.yaml
-pnpm-workspace.yaml
