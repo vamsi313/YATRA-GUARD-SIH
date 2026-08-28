@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -96,7 +97,11 @@ export default function AuthScreen() {
           <Text style={[styles.headerTitle, { color: colors.ink }]}>
             {isLoginMode ? 'Sign In' : 'Create Account'}
           </Text>
-          <Icon name="shield" size={19} color={colors.saffron} />
+          <Image
+            source={require('@/assets/images/icon.png')}
+            style={{ width: 28, height: 28, borderRadius: 6 }}
+            resizeMode="contain"
+          />
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>

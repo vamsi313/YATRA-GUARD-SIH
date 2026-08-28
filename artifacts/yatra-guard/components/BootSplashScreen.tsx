@@ -148,7 +148,7 @@ export function BootSplashScreen({ onFinish }: BootSplashScreenProps) {
           <Image
             source={require('@/assets/images/icon.png')}
             style={styles.logoImage}
-            resizeMode="cover"
+            resizeMode="contain"
           />
         </Animated.View>
       </View>

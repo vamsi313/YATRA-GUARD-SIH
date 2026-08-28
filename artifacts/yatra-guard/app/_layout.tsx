@@ -12,6 +12,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/inter';
 import { router, Stack, usePathname } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
 import { YatraProvider, useYatra } from '@/context/YatraContext';
 import { BootSplashScreen } from '@/components/BootSplashScreen';
 

@@ -103,13 +103,51 @@ export default function PlaceMapScreen() {
           />
         ) : (
           <View style={styles.mobileMapContainer}>
-            <ExpoImage
-              source={{
-                uri: `https://staticmap.openstreetmap.de/staticmap.php?center=${selectedPlace.latitude},${selectedPlace.longitude}&zoom=15&size=650x320&markers=${selectedPlace.latitude},${selectedPlace.longitude},red-pushpin`,
-              }}
-              style={styles.mobileMapImage}
-              contentFit="cover"
-            />
+            {/* Realistic Dark Cyber Map Canvas */}
+            <View style={{ flex: 1, backgroundColor: '#09111E', position: 'relative', overflow: 'hidden' }}>
+              {/* Grid Lines Pattern */}
+              <View style={StyleSheet.absoluteFillObject}>
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <View key={`h-${i}`} style={{ position: 'absolute', left: 0, right: 0, top: `${(i + 1) * 12}%`, height: 1, backgroundColor: '#1E293B55' }} />
+                ))}
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <View key={`v-${i}`} style={{ position: 'absolute', top: 0, bottom: 0, left: `${(i + 1) * 12}%`, width: 1, backgroundColor: '#1E293B55' }} />
+                ))}
+              </View>
+
+              {/* Simulated Map Road Networks & Pathways */}
+              <View style={{ position: 'absolute', top: '25%', left: 0, right: 0, height: 14, backgroundColor: '#33415555', transform: [{ rotate: '-12deg' }] }} />
+              <View style={{ position: 'absolute', top: '60%', left: 0, right: 0, height: 18, backgroundColor: '#33415555', transform: [{ rotate: '8deg' }] }} />
+              <View style={{ position: 'absolute', top: 0, bottom: 0, left: '35%', width: 16, backgroundColor: '#33415555', transform: [{ rotate: '15deg' }] }} />
+              <View style={{ position: 'absolute', top: 0, bottom: 0, left: '70%', width: 22, backgroundColor: '#33415555', transform: [{ rotate: '-25deg' }] }} />
+
+              {/* Simulated River / Waterway (Blue Contour) */}
+              <View style={{ position: 'absolute', top: '45%', left: '-10%', right: '-10%', height: 42, backgroundColor: '#0284C722', borderWidth: 1, borderColor: '#38BDF844', borderRadius: 20, transform: [{ rotate: '-6deg' }] }} />
+
+              {/* Surrounding Nearby POI Markers */}
+              <View style={{ position: 'absolute', top: '22%', left: '28%', width: 8, height: 8, borderRadius: 4, backgroundColor: '#38BDF8' }} />
+              <View style={{ position: 'absolute', top: '65%', left: '75%', width: 8, height: 8, borderRadius: 4, backgroundColor: '#38BDF8' }} />
+              <View style={{ position: 'absolute', top: '78%', left: '42%', width: 8, height: 8, borderRadius: 4, backgroundColor: '#38BDF8' }} />
+
+              {/* Target Location Pulsing Radar Marker Pin */}
+              <View style={{ position: 'absolute', top: '42%', left: '46%', alignItems: 'center' }}>
+                <View style={{ width: 44, height: 44, borderRadius: 22, backgroundColor: '#FF550025', borderWidth: 2, borderColor: '#FF5500AA', alignItems: 'center', justifyContent: 'center' }}>
+                  <View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: '#FF5500', borderWidth: 3, borderColor: '#FFFFFF' }} />
+                </View>
+                <View style={{ backgroundColor: '#0F172AEE', paddingHorizontal: 10, paddingVertical: 5, borderRadius: 8, marginTop: 4, borderWidth: 1, borderColor: '#FF5500' }}>
+                  <Text style={{ color: '#F8FAFC', fontSize: 11, fontWeight: '800' }}>{selectedPlace.name}</Text>
+                  <Text style={{ color: '#FF5500', fontSize: 9, fontWeight: '700', textAlign: 'center' }}>
+                    {selectedPlace.latitude.toFixed(4)}, {selectedPlace.longitude.toFixed(4)}
+                  </Text>
+                </View>
+              </View>
+
+              {/* Map Scale & Compass Overlay */}
+              <View style={{ position: 'absolute', top: 10, left: 10, backgroundColor: '#0F172ACC', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, borderWidth: 1, borderColor: '#334155' }}>
+                <Text style={{ color: '#94A3B8', fontSize: 9, fontWeight: '800' }}>GPS RADAR MAP · 150m</Text>
+              </View>
+            </View>
+
             <Pressable onPress={openGoogleMapsExternal} style={styles.mobileMapOverlayBtn}>
               <Icon name="navigation" size={14} color="#FFFFFF" />
               <Text style={styles.mobileMapOverlayText}>Navigate in Google Maps</Text>

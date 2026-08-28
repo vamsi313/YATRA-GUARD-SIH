@@ -106,44 +106,54 @@ export default function AiScreen() {
   ]);
 
   const askGeminiDirectly = async (userPrompt: string, location: string): Promise<string> => {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 25000);
+    const models = ['gemini-3.6-flash', 'gemini-2.5-flash', 'gemini-3.5-flash'];
 
-    try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          signal: controller.signal,
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `You are YatraGuard AI, a compassionate, hyper-knowledgeable pilgrimage safety and temple guide for Indian pilgrimage sites.
+    for (const model of models) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 25000);
+
+      try {
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_KEY}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [
+                    {
+                      text: `You are YatraGuard AI, a compassionate, hyper-knowledgeable pilgrimage safety and temple guide for Indian pilgrimage sites.
 Destination context: ${location}.
 User query: "${userPrompt}".
 
 Give a concise, crowd-conscious, caring answer in 2-4 sentences. Include safe timings, tranquil spots, free food/annadanam, water, and senior safety tips if relevant. Stay respectful and encouraging.`,
-                  },
-                ],
-              },
-            ],
-          }),
+                    },
+                  ],
+                },
+              ],
+            }),
+          }
+        );
+
+        clearTimeout(timeoutId);
+
+        if (response.status === 429 || response.status === 503) {
+          // Rate limited or overloaded - try next model
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          continue;
         }
-      );
 
-      clearTimeout(timeoutId);
-
-      if (response.ok) {
-        const data = await response.json();
-        const parts: Array<{ text?: string }> = data?.candidates?.[0]?.content?.parts ?? [];
-        const text = parts.map((p) => p.text ?? '').join('').trim();
-        if (text) return text;
+        if (response.ok) {
+          const data = await response.json();
+          const parts: Array<{ text?: string }> = data?.candidates?.[0]?.content?.parts ?? [];
+          const text = parts.map((p) => p.text ?? '').join('').trim();
+          if (text) return text;
+        }
+      } catch {
+        clearTimeout(timeoutId);
       }
-    } catch {
-      clearTimeout(timeoutId);
     }
 
     return '';
