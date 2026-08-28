@@ -12,12 +12,8 @@ import {
   useFonts,
 } from '@expo-google-fonts/inter';
 import { router, Stack, usePathname } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { setBaseUrl } from '@workspace/api-client-react';
 import { YatraProvider, useYatra } from '@/context/YatraContext';
 import { BootSplashScreen } from '@/components/BootSplashScreen';
-
-setBaseUrl(`https://${process.env.EXPO_PUBLIC_DOMAIN}`);
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
