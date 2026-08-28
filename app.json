@@ -29,6 +29,7 @@
     },
     "plugins": [
       "expo-router",
+      "./plugins/withKotlinVersion",
       [
         "expo-build-properties",
         {
