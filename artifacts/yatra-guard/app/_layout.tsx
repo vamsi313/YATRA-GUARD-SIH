@@ -11,10 +11,11 @@ import {
   Inter_700Bold,
   useFonts,
 } from '@expo-google-fonts/inter';
-import { Stack } from 'expo-router';
+import { router, Stack, usePathname } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { setBaseUrl } from '@workspace/api-client-react';
-import { YatraProvider } from '@/context/YatraContext';
+import { YatraProvider, useYatra } from '@/context/YatraContext';
+import { BootSplashScreen } from '@/components/BootSplashScreen';
 
 setBaseUrl(`https://${process.env.EXPO_PUBLIC_DOMAIN}`);
 
@@ -23,10 +24,71 @@ SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
 
+function DestinationGuard({ children }: { children: React.ReactNode }) {
+  const { user, isLoading, selectedDestination } = useYatra();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Wait until AsyncStorage has finished restoring session
+    if (isLoading) return;
+
+    // Not logged in → force to auth screen
+    if (!user && pathname !== '/auth') {
+      router.replace('/auth');
+      return;
+    }
+
+    if (user) {
+      // 1. If Authority Role
+      if (user.role === 'authority') {
+        if (!selectedDestination && pathname !== '/destination-picker') {
+          router.replace('/destination-picker');
+          return;
+        }
+        if (selectedDestination && pathname !== '/authority/dashboard' && pathname !== '/destination-picker') {
+          router.replace('/authority/dashboard');
+          return;
+        }
+      }
+
+      // 2. If Pilgrim Role
+      if (user.role !== 'authority') {
+        // Block pilgrims from authority dashboard
+        if (pathname.startsWith('/authority')) {
+          router.replace('/(tabs)');
+          return;
+        }
+        // Logged in pilgrim but no destination chosen → force to destination picker
+        if (!selectedDestination && pathname !== '/destination-picker') {
+          router.replace('/destination-picker');
+          return;
+        }
+      }
+    }
+  }, [user, isLoading, selectedDestination, pathname]);
+
+  // While restoring session, render nothing (splash screen is still visible)
+  if (isLoading) return null;
+
+  return <>{children}</>;
+}
+
 function RootLayoutNav() {
   return (
-    <Stack screenOptions={{ headerBackTitle: 'Back' }}>
+    <Stack screenOptions={{ headerShown: false, headerBackTitle: 'Back' }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="auth" options={{ headerShown: false }} />
+      <Stack.Screen name="place-map" options={{ headerShown: false }} />
+      <Stack.Screen name="family-hub" options={{ headerShown: false }} />
+      <Stack.Screen name="transport" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="destination-picker"
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="authority/dashboard"
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
     </Stack>
   );
 }
@@ -38,6 +100,7 @@ export default function RootLayout() {
     Inter_600SemiBold,
     Inter_700Bold,
   });
+  const [isBooting, setIsBooting] = React.useState(true);
 
   useEffect(() => {
     if (fontsLoaded || fontError) {
@@ -52,9 +115,14 @@ export default function RootLayout() {
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
           <YatraProvider>
-            <GestureHandlerRootView>
+            <GestureHandlerRootView style={{ flex: 1 }}>
               <KeyboardProvider>
-                <RootLayoutNav />
+                <DestinationGuard>
+                  <RootLayoutNav />
+                </DestinationGuard>
+                {isBooting && (
+                  <BootSplashScreen onFinish={() => setIsBooting(false)} />
+                )}
               </KeyboardProvider>
             </GestureHandlerRootView>
           </YatraProvider>

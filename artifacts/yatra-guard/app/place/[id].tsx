@@ -24,7 +24,21 @@ export default function PlaceDetailScreen() {
     {isCritical && <View style={[styles.avoidBox, { backgroundColor: colors.ink }]}><Icon name="shield" size={19} color={colors.saffron} /><View style={{ flex: 1 }}><Text style={styles.avoidTitle}>Avoid entering this area right now.</Text><Text style={styles.avoidBody}>There are safer places nearby with much shorter waits.</Text></View></View>}
     <SectionHeader eyebrow="VISITING NOTES" title="Make it easier" />
     <View style={styles.tags}>{place.tags.map((tag) => <View key={tag} style={[styles.tag, { backgroundColor: colors.card, borderColor: colors.border }]}><Icon name={tag.includes('crowd') ? 'users' : tag.includes('photo') ? 'camera' : 'check'} size={13} color={colors.teal} /><Text style={[styles.tagText, { color: colors.inkSoft }]}>{tag}</Text></View>)}</View>
-    <View style={styles.buttons}><PrimaryButton label="Navigate" icon="navigation" onPress={() => Alert.alert('Prototype navigation', `A route to ${place.name} would open here.`)} /><PrimaryButton label={isFavorite(place.id) ? 'Saved' : 'Save place'} icon="heart" variant="secondary" onPress={() => toggleFavorite(place.id)} /></View>
+    <View style={styles.buttons}>
+      <PrimaryButton
+        label="View on Map"
+        icon="map-pin"
+        onPress={() => router.push({ pathname: '/place-map', params: { id: place.id } })}
+        style={{ backgroundColor: colors.saffron, flex: 1.3 }}
+      />
+      <PrimaryButton
+        label={isFavorite(place.id) ? 'Saved' : 'Save place'}
+        icon="heart"
+        variant="secondary"
+        onPress={() => toggleFavorite(place.id)}
+        style={{ flex: 1 }}
+      />
+    </View>
   </Screen>;
 }
 
