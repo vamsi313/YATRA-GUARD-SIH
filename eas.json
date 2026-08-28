@@ -13,6 +13,7 @@
     },
     "preview": {
       "distribution": "internal",
+      "prebuildCommand": "expo prebuild --clean && sed -i 's/kotlinVersion = \"1.9.25\"/kotlinVersion = \"2.1.21\"/g' android/build.gradle && sed -i 's/org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.25/org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.21/g' android/build.gradle",
       "android": {
         "buildType": "apk"
       },
