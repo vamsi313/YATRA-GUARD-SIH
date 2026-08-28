@@ -2,9 +2,9 @@ import { router, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { CrowdBadge, CrowdBar, Icon, MiniMetric, PlaceRow, PrimaryButton, Screen, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { getDestination, getDestinationPlaces, getPlace, getOccupancy, getRisk, imageAssets } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
+import { CrowdBadge, CrowdBar, Icon, MiniMetric, PlaceRow, PrimaryButton, Screen, SectionHeader, styles as ui } from '../../components/YatraUI';
+import { getDestination, getDestinationPlaces, getPlace, getOccupancy, getRisk, imageAssets } from '../../data/mockData';
+import { useColors } from '../../hooks/useColors';
 
 export default function DestinationScreen() {
   const colors = useColors();

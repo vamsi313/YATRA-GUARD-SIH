@@ -4,12 +4,12 @@
     "slug": "yatra-guard",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./artifacts/yatra-guard/assets/images/icon.png",
     "scheme": "yatra-guard",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
+    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/icon.png",
+      "image": "./artifacts/yatra-guard/assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,35 +18,23 @@
     },
     "android": {
       "package": "com.yatraguard.app",
-      "kotlinVersion": "2.0.21",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./artifacts/yatra-guard/assets/images/icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/images/icon.png"
+      "favicon": "./artifacts/yatra-guard/assets/images/icon.png"
     },
     "plugins": [
-      "expo-router",
-      "./plugins/withKotlinVersion",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "kotlinVersion": "2.0.21"
-          }
-        }
-      ]
+      "expo-router"
     ],
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
-      "eas": {
-        "projectId": "fe780a8b-408e-45d6-9129-15820b4577df"
-      }
+      "eas": {}
     },
-    "owner": "vamsi_313"
+    "owner": "krishna_313"
   }
 }

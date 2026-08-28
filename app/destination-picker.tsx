@@ -10,10 +10,10 @@ import {
   Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { destinations, imageAssets } from '@/data/mockData';
-import { useYatra } from '@/context/YatraContext';
-import { useColors } from '@/hooks/useColors';
-import { Icon } from '@/components/YatraUI';
+import { destinations, imageAssets } from '../data/mockData';
+import { useYatra } from '../context/YatraContext';
+import { useColors } from '../hooks/useColors';
+import { Icon } from '../components/YatraUI';
 
 const DEST_TAGLINE: Record<string, string> = {
   tirumala: 'Seven Hills · Venkateswara Darshan',

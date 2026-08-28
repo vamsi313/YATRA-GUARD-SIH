@@ -34,9 +34,10 @@
     },
     "extra": {
       "eas": {
-        "projectId": "fe780a8b-408e-45d6-9129-15820b4577df"
-      }
+        "projectId": "fb9a64fc-eac9-4e29-8905-08cc9f5e0d56"
+      },
+      "router": {}
     },
-    "owner": "vamsi_313"
+    "owner": "krishna_313"
   }
 }

@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { AlertSeverity, alerts } from '@/data/mockData';
-import { Icon, Screen, styles as ui } from '@/components/YatraUI';
-import { useColors } from '@/hooks/useColors';
+import { AlertSeverity, alerts } from '../data/mockData';
+import { Icon, Screen, styles as ui } from '../components/YatraUI';
+import { useColors } from '../hooks/useColors';
 
 export default function AlertsScreen() {
   const colors = useColors();

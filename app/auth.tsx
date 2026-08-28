@@ -13,9 +13,9 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { Icon, PrimaryButton, Screen, styles as ui } from '@/components/YatraUI';
-import { useYatra } from '@/context/YatraContext';
-import { useColors } from '@/hooks/useColors';
+import { Icon, PrimaryButton, Screen, styles as ui } from '../components/YatraUI';
+import { useYatra } from '../context/YatraContext';
+import { useColors } from '../hooks/useColors';
 
 export default function AuthScreen() {
   const colors = useColors();
@@ -98,7 +98,7 @@ export default function AuthScreen() {
             {isLoginMode ? 'Sign In' : 'Create Account'}
           </Text>
           <Image
-            source={require('@/assets/images/icon.png')}
+            source={require('../assets/images/icon.png')}
             style={{ width: 28, height: 28, borderRadius: 6 }}
             resizeMode="contain"
           />

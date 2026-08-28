@@ -3,8 +3,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import React, { PropsWithChildren } from 'react';
 import { Image, ImageBackground, ImageStyle, Platform, Pressable, ScrollView, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { CrowdLevel, getCrowdLevel, getOccupancy, getRisk, imageAssets, Place } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
+import { CrowdLevel, getCrowdLevel, getOccupancy, getRisk, imageAssets, Place } from '../data/mockData';
+import { useColors } from '../hooks/useColors';
 
 type IconName = React.ComponentProps<typeof Feather>['name'];
 

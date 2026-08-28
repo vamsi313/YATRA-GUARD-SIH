@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Icon, Screen, styles as ui } from '@/components/YatraUI';
-import { destinations, getDestinationTransport, TransportRouteOption } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { Icon, Screen, styles as ui } from '../components/YatraUI';
+import { destinations, getDestinationTransport, TransportRouteOption } from '../data/mockData';
+import { useColors } from '../hooks/useColors';
+import { useYatra } from '../context/YatraContext';
 
 export default function TransportScreen() {
   const colors = useColors();

@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Avatar, BrandMark, DestinationCard, Icon, PrimaryButton, Screen, SearchBar, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { destinations, getDestinationPlaces, getOccupancy, getPlace } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { Avatar, BrandMark, DestinationCard, Icon, PrimaryButton, Screen, SearchBar, SectionHeader, styles as ui } from '../../components/YatraUI';
+import { destinations, getDestinationPlaces, getOccupancy, getPlace } from '../../data/mockData';
+import { useColors } from '../../hooks/useColors';
+import { useYatra } from '../../context/YatraContext';
 
 export default function HomeScreen() {
   const colors = useColors();

@@ -12,9 +12,9 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Icon } from '@/components/YatraUI';
-import { useYatra, EmergencyEvent, TransportCondition } from '@/context/YatraContext';
-import { destinations, getOccupancy, getCrowdLevel, AlertSeverity } from '@/data/mockData';
+import { Icon } from '../../components/YatraUI';
+import { useYatra, EmergencyEvent, TransportCondition } from '../../context/YatraContext';
+import { destinations, getOccupancy, getCrowdLevel, AlertSeverity } from '../../data/mockData';
 
 export default function AuthorityDashboard() {
   const {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Alert, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
-import { CrowdBadge, Icon, PrimaryButton, Screen, SectionHeader } from '@/components/YatraUI';
-import { useYatra } from '@/context/YatraContext';
-import { useColors } from '@/hooks/useColors';
-import { getCrowdLevel, getOccupancy, getPlace, getRisk } from '@/data/mockData';
+import { CrowdBadge, Icon, PrimaryButton, Screen, SectionHeader } from '../components/YatraUI';
+import { useYatra } from '../context/YatraContext';
+import { useColors } from '../hooks/useColors';
+import { getCrowdLevel, getOccupancy, getPlace, getRisk } from '../data/mockData';
 
 export default function FamilyHubScreen() {
   const colors = useColors();

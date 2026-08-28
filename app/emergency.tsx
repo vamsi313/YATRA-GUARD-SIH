@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { emergencyPoints } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
+import { Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '../components/YatraUI';
+import { emergencyPoints } from '../data/mockData';
+import { useColors } from '../hooks/useColors';
 
 export default function EmergencyScreen() {
   const colors = useColors();

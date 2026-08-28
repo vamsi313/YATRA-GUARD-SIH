@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Easing, Image, StyleSheet, Text, View } from 'react-native';
-import { Icon } from '@/components/YatraUI';
+import { Icon } from '../components/YatraUI';
 
 interface BootSplashScreenProps {
   onFinish: () => void;
@@ -146,7 +146,7 @@ export function BootSplashScreen({ onFinish }: BootSplashScreenProps) {
           ]}
         >
           <Image
-            source={require('@/assets/images/icon.png')}
+            source={require('../assets/images/icon.png')}
             style={styles.logoImage}
             resizeMode="contain"
           />

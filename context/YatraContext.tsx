@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
-import { destinations, Destination, places as initialPlaces, alerts as initialAlerts, AlertSeverity, Place, FamilyGroup, mockFamilyGroups, FamilyMember } from '@/data/mockData';
+import { destinations, Destination, places as initialPlaces, alerts as initialAlerts, AlertSeverity, Place, FamilyGroup, mockFamilyGroups, FamilyMember } from '../data/mockData';
 import Constants from 'expo-constants';
 
 function getApiBaseUrl() {

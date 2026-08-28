@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { Dimensions, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { CrowdBadge, CrowdBar, Icon, MiniMetric, Screen, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { destinations, getCrowdLevel, getOccupancy, mockForecast } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { CrowdBadge, CrowdBar, Icon, MiniMetric, Screen, SectionHeader, styles as ui } from '../../components/YatraUI';
+import { destinations, getCrowdLevel, getOccupancy, mockForecast } from '../../data/mockData';
+import { useColors } from '../../hooks/useColors';
+import { useYatra } from '../../context/YatraContext';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 

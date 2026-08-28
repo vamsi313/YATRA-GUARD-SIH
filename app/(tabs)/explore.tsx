@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React, { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Avatar, Icon, PlaceRow, Screen, SearchBar, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { destinations, getDestinationPlaces, getOccupancy, places } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { Avatar, Icon, PlaceRow, Screen, SearchBar, SectionHeader, styles as ui } from '../../components/YatraUI';
+import { destinations, getDestinationPlaces, getOccupancy, places } from '../../data/mockData';
+import { useColors } from '../../hooks/useColors';
+import { useYatra } from '../../context/YatraContext';
 
 const filters = ['Popular', 'Nearby', 'Low crowd', 'Temples', 'Nature', 'Food'];
 

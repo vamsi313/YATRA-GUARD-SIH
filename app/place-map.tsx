@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Image as ExpoImage } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
-import { CrowdBadge, CrowdBar, Icon, PrimaryButton, Screen, SectionHeader } from '@/components/YatraUI';
-import { getCrowdLevel, getOccupancy, getPlace, getRisk, NearbyFacility, NearbyFacilityType, Place, TransportRouteOption } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { CrowdBadge, CrowdBar, Icon, PrimaryButton, Screen, SectionHeader } from '../components/YatraUI';
+import { getCrowdLevel, getOccupancy, getPlace, getRisk, NearbyFacility, NearbyFacilityType, Place, TransportRouteOption } from '../data/mockData';
+import { useColors } from '../hooks/useColors';
+import { useYatra } from '../context/YatraContext';
 
 export default function PlaceMapScreen() {
   const colors = useColors();

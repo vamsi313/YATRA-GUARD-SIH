@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React from 'react';
 import { Alert, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
-import { Avatar, Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { useYatra } from '@/context/YatraContext';
-import { useColors } from '@/hooks/useColors';
-import { getDestinationPlaces } from '@/data/mockData';
+import { Avatar, Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '../../components/YatraUI';
+import { useYatra } from '../../context/YatraContext';
+import { useColors } from '../../hooks/useColors';
+import { getDestinationPlaces } from '../../data/mockData';
 
 const preferenceOptions = [
   'Family',

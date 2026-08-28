@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Icon, Screen } from '@/components/YatraUI';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { Icon, Screen } from '../../components/YatraUI';
+import { useColors } from '../../hooks/useColors';
+import { useYatra } from '../../context/YatraContext';
 
 type Message = { id: string; from: 'ai' | 'user'; text: string };
 

@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '@/components/YatraUI';
-import { useColors } from '@/hooks/useColors';
-import { useYatra } from '@/context/YatraContext';
+import { Icon, PrimaryButton, Screen, SectionHeader, styles as ui } from '../components/YatraUI';
+import { useColors } from '../hooks/useColors';
+import { useYatra } from '../context/YatraContext';
 
 const interests = ['Temple', 'Culture', 'Food', 'Nature', 'Family', 'Photography'];
 

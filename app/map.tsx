@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { CrowdBadge, Icon, Screen, styles as ui } from '@/components/YatraUI';
-import { places, getCrowdLevel, getOccupancy } from '@/data/mockData';
-import { useColors } from '@/hooks/useColors';
+import { CrowdBadge, Icon, Screen, styles as ui } from '../components/YatraUI';
+import { places, getCrowdLevel, getOccupancy } from '../data/mockData';
+import { useColors } from '../hooks/useColors';
 
 export default function MapScreen() {
   const colors = useColors();
