@@ -1,11 +1,11 @@
-const { withAndroidBuildGradle } = require('@expo/config-plugins');
+const { withProjectBuildGradle } = require('@expo/config-plugins');
 
 /**
  * Custom config plugin to force Kotlin 2.1.21 in android/build.gradle.
  * expo-modules-core 3.x requires Kotlin 2.0+ but Expo SDK 54 generates 1.9.25.
  */
 module.exports = function withKotlinVersion(config, { kotlinVersion = '2.1.21' } = {}) {
-  return withAndroidBuildGradle(config, (config) => {
+  return withProjectBuildGradle(config, (config) => {
     let contents = config.modResults.contents;
 
     // Replace kotlinVersion in ext block
