@@ -1,11 +1,11 @@
 const { withProjectBuildGradle } = require('@expo/config-plugins');
 
 /**
- * Custom config plugin to force Kotlin 2.1.21 in android/build.gradle.
- * expo-modules-core 3.x requires Kotlin 2.0+ but Expo SDK 54's version catalog pins 1.9.25.
- * We inject the version explicitly into the classpath to override the version catalog.
+ * Custom config plugin to force Kotlin 2.0.21 in android/build.gradle.
+ * React Native 0.76 requires Kotlin 2.0.x (2.1+ breaks KotlinTopLevelExtension).
+ * Kotlin 2.0.21 is fully supported by Expo 54 KSP matrix.
  */
-module.exports = function withKotlinVersion(config, { kotlinVersion = '2.1.21' } = {}) {
+module.exports = function withKotlinVersion(config, { kotlinVersion = '2.0.21' } = {}) {
   return withProjectBuildGradle(config, (config) => {
     let contents = config.modResults.contents;
 
