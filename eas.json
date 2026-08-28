@@ -7,14 +7,12 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "projectRoot": "./artifacts/yatra-guard",
       "env": {
         "EXPO_PUBLIC_DOMAIN": "yatraguard-api.onrender.com"
       }
     },
     "preview": {
       "distribution": "internal",
-      "projectRoot": "./artifacts/yatra-guard",
       "android": {
         "buildType": "apk"
       },
@@ -23,7 +21,6 @@
       }
     },
     "production": {
-      "projectRoot": "./artifacts/yatra-guard",
       "android": {
         "buildType": "apk"
       },
