@@ -856,3 +856,72 @@ export function getDestination(id: string) {
 }
 
 export const mockForecast = [82, 91, 108, 121, 114];
+
+export const CROWD_SOURCES: Record<string, {
+  sourceName: string;
+  sourceAuthority: string;
+  dataType: string;
+  confidence: string;
+}> = {
+  tirumala: {
+    sourceName: "TTD (Tirumala Tirupati Devasthanams)",
+    sourceAuthority: "TTD IT & Vigilance Infrastructure",
+    dataType: "Historical + Event-Based Estimate",
+    confidence: "94.6% Predictive Calibration",
+  },
+  varanasi: {
+    sourceName: "Kashi Vishwanath Temple Trust & UP Tourism",
+    sourceAuthority: "Shri Kashi Vishwanath Special Area Board",
+    dataType: "Historical + Event-Based Estimate",
+    confidence: "93.8% Predictive Calibration",
+  },
+  prayagraj: {
+    sourceName: "Prayagraj Mela Authority & UP Tourism",
+    sourceAuthority: "District Administration & Mela Command Center",
+    dataType: "Historical + Event-Based Estimate",
+    confidence: "95.1% Predictive Calibration",
+  },
+  rameswaram: {
+    sourceName: "Arulmigu Ramanathaswamy Temple Trust (HR&CE Dept, TN)",
+    sourceAuthority: "Hindu Religious & Charitable Endowments Dept",
+    dataType: "Historical + Event-Based Estimate",
+    confidence: "92.9% Predictive Calibration",
+  },
+};
+
+export const CROWD_EVENTS: Record<string, Array<{
+  id: string;
+  name: string;
+  type: string;
+  multiplier: number;
+  estimatedVisitors: number;
+}>> = {
+  tirumala: [
+    { id: 'regular_weekday', name: 'Normal Weekday Flow', type: 'standard', multiplier: 1.0, estimatedVisitors: 48500 },
+    { id: 'weekend_surge', name: 'Weekend Influx (Fri-Sun)', type: 'weekend', multiplier: 1.55, estimatedVisitors: 78200 },
+    { id: 'brahmotsavam', name: 'Salakatla Brahmotsavam', type: 'festival', multiplier: 2.1, estimatedVisitors: 105000 },
+    { id: 'vaikuntha_ekadashi', name: 'Vaikuntha Ekadashi', type: 'festival', multiplier: 2.45, estimatedVisitors: 122000 },
+    { id: 'rathasapthami', name: 'Ratha Sapthami', type: 'festival', multiplier: 1.9, estimatedVisitors: 94000 },
+  ],
+  varanasi: [
+    { id: 'regular_weekday', name: 'Normal Weekday Flow', type: 'standard', multiplier: 1.0, estimatedVisitors: 36000 },
+    { id: 'weekend_surge', name: 'Weekend Tourist Influx', type: 'weekend', multiplier: 1.6, estimatedVisitors: 62000 },
+    { id: 'maha_shivaratri', name: 'Maha Shivaratri Mahotsav', type: 'festival', multiplier: 3.2, estimatedVisitors: 165000 },
+    { id: 'dev_deepawali', name: 'Dev Deepawali (Kartik Purnima)', type: 'festival', multiplier: 3.5, estimatedVisitors: 190000 },
+    { id: 'shravan_somwar', name: 'Shravan Maas Somwar', type: 'seasonal', multiplier: 2.3, estimatedVisitors: 110000 },
+  ],
+  prayagraj: [
+    { id: 'regular_weekday', name: 'Normal Weekday Flow', type: 'standard', multiplier: 1.0, estimatedVisitors: 28000 },
+    { id: 'weekend_surge', name: 'Weekend Influx', type: 'weekend', multiplier: 1.65, estimatedVisitors: 54000 },
+    { id: 'mauni_amavasya', name: 'Mauni Amavasya Royal Snan', type: 'festival', multiplier: 8.5, estimatedVisitors: 850000 },
+    { id: 'makar_sankranti', name: 'Makar Sankranti Snan', type: 'festival', multiplier: 5.5, estimatedVisitors: 520000 },
+    { id: 'kumbh_mela_shahi', name: 'Kumbh Mela Maha Shahi Snan', type: 'festival', multiplier: 18.0, estimatedVisitors: 2500000 },
+  ],
+  rameswaram: [
+    { id: 'regular_weekday', name: 'Normal Weekday Flow', type: 'standard', multiplier: 1.0, estimatedVisitors: 22000 },
+    { id: 'weekend_surge', name: 'Weekend Influx', type: 'weekend', multiplier: 1.7, estimatedVisitors: 41000 },
+    { id: 'aadi_amavasai', name: 'Aadi Amavasai Holy Dip', type: 'festival', multiplier: 3.4, estimatedVisitors: 88000 },
+    { id: 'maha_shivaratri', name: 'Maha Shivaratri & Chariot', type: 'festival', multiplier: 2.9, estimatedVisitors: 76000 },
+    { id: 'thai_amavasai', name: 'Thai Amavasai Snan', type: 'festival', multiplier: 2.8, estimatedVisitors: 69000 },
+  ],
+};

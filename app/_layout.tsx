@@ -17,7 +17,7 @@ import { YatraProvider, useYatra } from '../context/YatraContext';
 import { BootSplashScreen } from '../components/BootSplashScreen';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync().catch(() => {});
 
 const queryClient = new QueryClient();
 
@@ -64,9 +64,6 @@ function DestinationGuard({ children }: { children: React.ReactNode }) {
     }
   }, [user, isLoading, selectedDestination, pathname]);
 
-  // While restoring session, render nothing (splash screen is still visible)
-  if (isLoading) return null;
-
   return <>{children}</>;
 }
 
@@ -98,14 +95,26 @@ export default function RootLayout() {
     Inter_700Bold,
   });
   const [isBooting, setIsBooting] = React.useState(true);
+  const [appReady, setAppReady] = React.useState(false);
 
   useEffect(() => {
+    // Hide native splash once fonts are ready or errored
     if (fontsLoaded || fontError) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync().catch(() => {});
+      setAppReady(true);
     }
   }, [fontsLoaded, fontError]);
 
-  if (!fontsLoaded && !fontError) return null;
+  // Safety fallback: never allow the app to get stuck on native splash screen
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      SplashScreen.hideAsync().catch(() => {});
+      setAppReady(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!appReady && !fontsLoaded && !fontError) return null;
 
   return (
     <SafeAreaProvider>
@@ -113,14 +122,12 @@ export default function RootLayout() {
         <QueryClientProvider client={queryClient}>
           <YatraProvider>
             <GestureHandlerRootView style={{ flex: 1 }}>
-              <KeyboardProvider>
-                <DestinationGuard>
-                  <RootLayoutNav />
-                </DestinationGuard>
-                {isBooting && (
-                  <BootSplashScreen onFinish={() => setIsBooting(false)} />
-                )}
-              </KeyboardProvider>
+              <DestinationGuard>
+                <RootLayoutNav />
+              </DestinationGuard>
+              {isBooting && (
+                <BootSplashScreen onFinish={() => setIsBooting(false)} />
+              )}
             </GestureHandlerRootView>
           </YatraProvider>
         </QueryClientProvider>

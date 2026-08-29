@@ -126,8 +126,14 @@ function ClassicTabLayout() {
 }
 
 export default function TabLayout() {
-  if (isLiquidGlassAvailable()) {
-    return <NativeTabLayout />;
+  if (Platform.OS === 'ios') {
+    try {
+      if (isLiquidGlassAvailable && isLiquidGlassAvailable()) {
+        return <NativeTabLayout />;
+      }
+    } catch {
+      // Fallback to ClassicTabLayout
+    }
   }
   return <ClassicTabLayout />;
 }

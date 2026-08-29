@@ -5,6 +5,7 @@ import lodgesRouter from "./lodges";
 import aiRouter from "./ai";
 import alertsRouter from "./alerts";
 import authRouter from "./auth";
+import crowdRouter from "./crowd";
 import { runDbSeed } from "../lib/seed";
 
 const router: IRouter = Router();
@@ -15,6 +16,7 @@ router.use(lodgesRouter);
 router.use(aiRouter);
 router.use(alertsRouter);
 router.use(authRouter);
+router.use(crowdRouter);
 
 // Database auto-seed endpoint (convenient for setup)
 router.post("/seed", async (_req, res) => {

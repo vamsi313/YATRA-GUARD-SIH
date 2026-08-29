@@ -97,28 +97,30 @@ export function BootSplashScreen({ onFinish }: BootSplashScreenProps) {
         }),
         Animated.timing(progressWidth, {
           toValue: 1,
-          duration: 1600,
+          duration: 1200,
           easing: Easing.inOut(Easing.cubic),
-          useNativeDriver: false,
+          useNativeDriver: true,
         }),
       ]),
       // 4. Hold to display clearly, then fade out smoothly
-      Animated.delay(650),
+      Animated.delay(500),
       Animated.timing(screenOpacity, {
         toValue: 0,
-        duration: 600,
+        duration: 500,
         easing: Easing.out(Easing.quad),
         useNativeDriver: true,
       }),
     ]).start(() => {
       onFinish();
     });
-  }, []);
 
-  const progressInterpolate = progressWidth.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0%', '100%'],
-  });
+    // Safety timeout to ensure boot splash screen always dismisses
+    const safetyTimer = setTimeout(() => {
+      onFinish();
+    }, 3500);
+
+    return () => clearTimeout(safetyTimer);
+  }, []);
 
   return (
     <Animated.View style={[styles.container, { opacity: screenOpacity }]}>
@@ -169,7 +171,14 @@ export function BootSplashScreen({ onFinish }: BootSplashScreenProps) {
 
       {/* Progress Bar */}
       <View style={styles.progressTrack}>
-        <Animated.View style={[styles.progressBar, { width: progressInterpolate }]} />
+        <Animated.View
+          style={[
+            styles.progressBar,
+            {
+              transform: [{ scaleX: progressWidth }],
+            },
+          ]}
+        />
       </View>
 
       {/* PROMINENT & HIGH VISIBILITY DEVELOPER CREDIT BOX */}
@@ -184,7 +193,7 @@ export function BootSplashScreen({ onFinish }: BootSplashScreenProps) {
       >
         <View style={styles.vibeCard}>
           <View style={styles.vibeBadgeRow}>
-            <Icon name="sparkles" size={18} color="#FF9F1C" />
+            <Icon name="zap" size={18} color="#FF9F1C" />
             <Text style={styles.developedText}>DEVELOPED BY</Text>
           </View>
           <Text style={styles.teamTitle}>TEAM VIBE CODERS</Text>
